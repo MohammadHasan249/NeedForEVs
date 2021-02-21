@@ -15,9 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/NewsApp.unity
     guid: ca51da69eac75084d8cc56d8551aca1b
   - enabled: 1
-    path: Assets/Scenes/ChargingStationApp.unity
-    guid: 74247db6b94edea4cadf7558b0c7eaed
-  - enabled: 1
     path: Assets/Scenes/DistanceApp.unity
     guid: 85319e28d6e8ac1478a142ed90434a8a
   - enabled: 1
@@ -29,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MaintenanceApp.unity
     guid: 93b1234e6f5b15b42bdcc201d8e180cf
+  - enabled: 1
+    path: Assets/Scenes/ChargingStationApp.unity
+    guid: cf62d3546784d422699da0f824232b39
   m_configObjects: {}
