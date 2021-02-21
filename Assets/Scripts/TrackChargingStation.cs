@@ -32,13 +32,11 @@ public class TrackChargingStation : MonoBehaviour
     void Update()
     {
         if(Input.GetMouseButtonDown(0)){
-            Debug.Log("Click");
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if(Physics.Raycast(ray, out hit)){
                 if(hit.collider.gameObject.tag == "Obstacle"){
                     // Do nothing
-                    Debug.Log("Hit obstacle. Nothing happens");
                 } else {
                     shortestDistance = 999999f;
                     agentTransform.position = hit.point;
@@ -55,7 +53,6 @@ public class TrackChargingStation : MonoBehaviour
                         }
                         checker += 1;
                     }
-                    Debug.Log(cc);
                     agent.SetDestination(closestStation.transform.position);
                     // at this point in time, closestStation has the target location
                     // at this point in time, agentTransform has the agent position.
