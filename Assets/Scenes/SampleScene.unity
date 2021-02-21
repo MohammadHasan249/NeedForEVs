@@ -639,7 +639,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startMarker: {fileID: 727774081}
   endMarker: {fileID: 199891809}
-  speed: 1.8
+  speed: 2.5
 --- !u!1 &1076547764
 GameObject:
   m_ObjectHideFlags: 0

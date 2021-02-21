@@ -6,7 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class GoToMainScene : MonoBehaviour
 {
-    public void OnMouseDown(){
+
+    [SerializeField] private Button button = null;
+
+    private void Start()
+    {
+        button.GetComponent<Button>().onClick.AddListener(backButtonClicked);   
+    }
+
+    public void backButtonClicked(){
         SceneManager.LoadScene("SampleScene");
     }
 }
