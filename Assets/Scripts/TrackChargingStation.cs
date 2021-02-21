@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class TrackChargingStation : MonoBehaviour
 {
+    public GameObject carSprite;
 
     private Rigidbody rb;
     private LineRenderer line;
@@ -20,6 +21,7 @@ public class TrackChargingStation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        carSprite.SetActive(false);
         agent = GetComponent<NavMeshAgent>();
         agentTransform = GetComponent<Transform>();
         rb = GetComponent<Rigidbody>();
@@ -31,6 +33,7 @@ public class TrackChargingStation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        carSprite.transform.eulerAngles = new Vector3(90f, 0f, 0f);
         if(Input.GetMouseButtonDown(0)){
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -40,7 +43,7 @@ public class TrackChargingStation : MonoBehaviour
                 } else {
                     shortestDistance = 999999f;
                     agentTransform.position = hit.point;
-                    gameObject.GetComponent<MeshRenderer>().enabled = true;
+                    carSprite.SetActive(true);
                     // show the path finding to the nearest charging station
                     int checker = 0;
                     int cc = 0;
@@ -67,7 +70,7 @@ public class TrackChargingStation : MonoBehaviour
                 if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
                 {
                     // Pathfinding done: disable mesh for now
-                    gameObject.GetComponent<MeshRenderer>().enabled = false;
+                    carSprite.SetActive(false);
                 }
             }
         }
